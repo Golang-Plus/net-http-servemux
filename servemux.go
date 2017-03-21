@@ -8,11 +8,17 @@ import (
 	"github.com/julienschmidt/httprouter"
 )
 
-// New returns a new Router.
-func New() http2.ServeMux {
+// NewServeMux returns a new Router.
+func NewServeMux() http2.ServeMux {
 	return &ServeMux{
 		Router: httprouter.New(),
 	}
+
+}
+
+// Short to NewServeMux func.
+func New() http2.ServeMux {
+	return NewServeMux()
 }
 
 type ServeMux struct {
